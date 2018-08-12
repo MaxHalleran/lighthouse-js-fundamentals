@@ -1,16 +1,7 @@
-function loopyLighthouse(start, end, num1, num2) {
-  for (var i = start;i <= end; i++){
-    if (i % num1 == 0 && i % num2 == 0) {
-      //could be i % (num1 * num2) == 0
-      console.log("LoopyLighthouse");
-    } else if (i % num1 == 0) {
-      console.log("Loopy");
-    } else if (i % num2 == 0) {
-      console.log("Lighthouse");
-    } else {
-      console.log(i);
-    }
+function loopyLighthouse(range, multiples, words) {
+  for (var i = range[0]; i <= range[1]; i++){
+    console.log(((i % multiples[0] == 0) ? words[0] : "") + ((i % multiples[1] == 0) ? words[1] : "") || i)
   }
 }
 
-loopyLighthouse(100, 200, 3, 4);
+loopyLighthouse([100, 200], [3, 4], ["Loopy", "Lighthouse"]);
